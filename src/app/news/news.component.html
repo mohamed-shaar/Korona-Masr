@@ -1,1 +1,33 @@
-<p>news works!</p>
+<!--<mat-sidenav-container>
+<mat-sidenav
+    #drawer 
+    class="mat-sidenav"
+    [ngClass]="{hidden: !(isHeadst | async)!.matches}"
+    fixedInViewport="false"
+    [attr.role]="isHandset?'dialog':'navigation'"
+    [mode]="(isHandset? | async)!.matches?'over':'side'"
+    [opened]="!(isHandset? |async)!.matches">
+   
+    <mat-toolbar class="mat-elevation-z8" color="primary" >القائمه</mat-toolbar>
+    <mat-nav-list>
+        <a mat-list-item href ="#" routerLink="news"> أخر الأخبار</a>
+        <a mat-list-item href ="#" routerLink="numbers"> أرقام مفيدة</a>
+        <a mat-list-item href ="#" routerLink="hospitals"> مستشفيات</a>
+    </mat-nav-list>
+
+</mat-sidenav>
+<mat-sidenav-content>
+
+    <button
+     type="button"
+     aria-label="Toggle sidenav"
+     mat-icon-button
+       (click)="drawer.toggle()"
+       *ngIf="(isHandset | async)!.matches">
+       <mat-icon arial-label="Side nav toggle icon">menu</mat-icon>
+    </button>-->
+
+<!--
+</mat-sidenav-content>
+</mat-sidenav-container>
+-->

@@ -1,0 +1,58 @@
+.sidenav-container {
+  height: 100%;
+  }
+
+  
+.spacer{
+    flex: 1 1 auto; 
+    
+}
+.spacer2{
+  flex: 1 80 auto; 
+  
+}
+
+ .sidenav {
+ width: 200px;
+ margin-top: 72px;
+ margin: 0;
+ }
+ 
+
+.sidenav .mat-toolbar {
+    background: #0099CB ;
+    color: #fff;
+    direction: rtl;
+
+ }
+
+#drawer {
+position: fixed;
+}
+
+.mat-toolbar.mat-primary {
+  background: #0099CB ;
+  color: #fff;
+ position: sticky;
+ top: 0;
+ z-index: 1;
+ direction: rtl;
+
+}
+::ng-deep .mat-button{
+  justify-content: space-between;
+  height: 30px;
+  width:48px ;
+  font-size:19px ;
+  align-items: center;
+
+
+}
+
+.sidenav{
+width: 200px;
+box-shadow: 3px 0 6 px rgba(0,0,0,.24);
+}
+.mat-list-item{
+  direction: rtl;
+}

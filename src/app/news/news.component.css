@@ -1,0 +1,22 @@
+.spacer{
+    flex: 1 1 auto; 
+}
+.mat-toolbar.mat-primary {
+  background: #0099CB ;
+  color: #fff;
+}
+
+.sidenav{
+  width: 200px;
+  box-shadow: 3px 0 6 px rgba(0,0,0,.24);
+}
+
+@media(min-width: 768px){
+  .sidenav{
+    display: none;
+  }
+}
+
+.hidden{
+  display: none;
+}

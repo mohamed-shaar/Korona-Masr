@@ -1,0 +1,40 @@
+.full-width-table {
+  width: 100%;
+}
+.data-table{
+  width: 70%;
+  margin: 20px auto;
+  table-layout: fixed ;
+  direction: rtl;
+}
+
+tr:nth-child(even) {background-color: #F2F2F2; }
+
+
+th {
+  background-color: #767676;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width:auto;
+  justify-content:center;
+  font-size: 24px;
+
+}
+
+::ng-deep .mat-sort-header-container {
+  display:flex;
+  justify-content:center;
+}
+
+td {
+  height: 50px;
+  vertical-align: center;
+  width: 25px;
+  font-size: 16px;
+
+}
+th, td {
+  text-align: center;
+  padding: 15px;
+}
