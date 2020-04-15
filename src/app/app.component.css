@@ -8,16 +8,35 @@
     
 }
 .spacer2{
-  flex: 1 80 auto; 
+  flex: 1 50 auto; 
   
 }
-
+ 
  .sidenav {
  width: 200px;
  margin-top: 72px;
  margin: 0;
  }
- 
+
+ @media(min-width:600px) {
+   .sidenav  {
+   
+     display: none;
+   }
+ }
+ @media(min-width:600px){
+ .disp{
+   display: none;
+ }
+}
+
+ @media(max-width:700px) {
+  .mat-button{
+  
+    display: none;
+  }
+} 
+
 
 .sidenav .mat-toolbar {
     background: #0099CB ;
@@ -28,6 +47,11 @@
 
 #drawer {
 position: fixed;
+}
+
+.imgs{
+  width:30px ;
+  height:30px;
 }
 
 .mat-toolbar.mat-primary {
@@ -48,6 +72,7 @@ position: fixed;
 
 
 }
+
 
 .sidenav{
 width: 200px;

@@ -1,14 +1,23 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="falses"
       [attr.role]="'dialog'"
       [mode]="'over'"
-      [opened]="!(isHandset$ | async)"
+      [(opened)]="opened"
        position="end">
     <mat-toolbar>القائمة</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="news"> الأخبار</a>
-      <a mat-list-item routerLink="numbers">الإتصال</a>
-      <a mat-list-item routerLink="hospitals">المستشفيات</a>
+      <a mat-list-item routerLink="news">
+        <mat-icon>library_books</mat-icon>
+        &nbsp;
+        الأخبار</a>
+      <a mat-list-item routerLink="numbers">
+        <mat-icon>phone</mat-icon>
+        &nbsp;
+        الإتصال</a>
+      <a mat-list-item routerLink="hospitals">
+        <mat-icon>local_hospital</mat-icon>
+        &nbsp;
+        المستشفيات</a>
     </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -19,9 +28,9 @@
           type="button"
           aria-label="Toggle sidenav"
           mat-icon-button
-          (click)="drawer.toggle()"
+          (click)="opened=!opened"
           *ngIf="true">
-          <mat-icon aria-label="Side nav toggle icon" *ngIf="!drawer.opened; else showCross">
+          <mat-icon class="disp" aria-label="Side nav toggle icon" *ngIf="!drawer.opened; else showCross">
             menu
           </mat-icon>
           <ng-template #showCross>
@@ -29,9 +38,11 @@
           </ng-template>
         </button>
         <div class="spacer2"></div>
-        <a mat-button style="margin:5px;" routerLink="news">الأخبار</a>
-        <a mat-button style="margin:5px;"routerLink="numbers">الإتصال</a>
-        <a mat-button style="margin:5px;"routerLink="hospitals">المستشفيات</a>
+        <a mat-button style="margin:5px;" routerLink="news" ><mat-icon>library_books</mat-icon> الأخبار</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a mat-button style="margin:5px;"routerLink="numbers"><mat-icon>phone</mat-icon>  الإتصال</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a mat-button style="margin:5px;"routerLink="hospitals"> <mat-icon>local_hospital</mat-icon> المستشفيات</a>
         <div class="spacer"></div>
         <span>
             <img src="\assets\images\koronakorona.png">
