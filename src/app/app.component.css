@@ -81,3 +81,22 @@ box-shadow: 3px 0 6 px rgba(0,0,0,.24);
 .mat-list-item{
   direction: rtl;
 }
+footer {
+  position: fixed;
+  bottom:0.5px;
+  width: 100%;
+  left:0px;
+  height:25px;
+  background-color: #BDBDBD;
+}
+
+p.copyright {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  font-size: 0.7em;
+  text-align: center;
+  bottom:5;
+}
+
+
