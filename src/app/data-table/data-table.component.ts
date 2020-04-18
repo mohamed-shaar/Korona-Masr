@@ -23,9 +23,6 @@ export class DataTableComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new DataTableDataSource();
-    this.hospitalService.getHospitals().subscribe(hospitals => {
-      console.log(hospitals);
-    });
   }
 
   ngAfterViewInit() {
@@ -34,6 +31,6 @@ export class DataTableComponent implements AfterViewInit, OnInit {
     this.table.dataSource = this.dataSource;
   }
 
-  constructor(private hospitalService: HospitalService) {
+  constructor() {
   }
 }
