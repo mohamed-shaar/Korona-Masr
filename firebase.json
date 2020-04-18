@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "Korona-Masr",
+      "public": "dist/Korona-Masr",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

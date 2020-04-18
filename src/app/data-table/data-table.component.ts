@@ -2,7 +2,10 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { DataTableDataSource, DataTableItem } from './data-table-datasource';
+import { DataTableDataSource } from './data-table-datasource';
+import { DataTableItem } from '../models/hospital';
+import { HospitalService } from '../services/hospital.service';
+
 
 @Component({
   selector: 'app-data-table',
@@ -16,15 +19,21 @@ export class DataTableComponent implements AfterViewInit, OnInit {
   dataSource: DataTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['hospitals','number','place'];
+  displayedColumns = ['hospitals', 'number', 'place'];
 
   ngOnInit() {
     this.dataSource = new DataTableDataSource();
+    this.hospitalService.getHospitals().subscribe(hospitals => {
+      console.log(hospitals);
+    });
   }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+
+  constructor(private hospitalService: HospitalService) {
   }
 }

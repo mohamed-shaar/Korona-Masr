@@ -120,6 +120,10 @@
               "devServerTarget": "Korona-Masr:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

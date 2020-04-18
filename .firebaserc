@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firbasenotificationassignment": {
+      "hosting": {
+        "Korona-Masr": [
+          "firbasenotificationassignment"
+        ]
+      }
+    }
+  }
+}
