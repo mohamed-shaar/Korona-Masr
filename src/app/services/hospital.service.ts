@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
-import {DataTableItem} from '../models/hospital';
+import {HospitalItem} from '../models/hospital';
+import {shareReplay} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,18 +10,18 @@ import {DataTableItem} from '../models/hospital';
 export class HospitalService {
 
   hospitals: Observable<any[]>;
-  hospitalsCollection: AngularFirestoreCollection<DataTableItem>;
+  hospitalsCollection: AngularFirestoreCollection<HospitalItem>;
 
   constructor(public afs: AngularFirestore) {
     this.hospitals = this.afs.collection('hospitals').valueChanges();
     this.hospitalsCollection = this.afs.collection('hospitals');
   }
 
-  getHospitals(): Observable<DataTableItem[]> {
-    return this.hospitals;
+  getHospitals(): Observable<HospitalItem[]> {
+    return this.hospitals.pipe(shareReplay(1));
   }
 
-  addHospital(dataTableItem: DataTableItem) {
+  addHospital(dataTableItem: HospitalItem) {
     this.hospitalsCollection.add(dataTableItem);
   }
 }

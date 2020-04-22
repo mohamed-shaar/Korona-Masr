@@ -3,9 +3,9 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {map} from 'rxjs/operators';
 import {Observable, of as observableOf, merge} from 'rxjs';
-import {DataTableItem} from '../models/hospital';
+import {HospitalItem} from '../models/hospital';
 
-export const HOSPITALS: DataTableItem[] = [
+export const HOSPITALS: HospitalItem[] = [
   {place: 'مصر القديمة- السيدة- عابدين- الأزبكية', hospitals: 'مستشفى المنيرة العام', number: '0227947205'},
   {place: 'مصر الجديدة-  النزهة- المطرية- الزيتون- الأميرية', hospitals: 'مستشفى منشية بكري', number: '0222580270'},
   {place: 'شبرا - الموسكي', hospitals: 'مستشفى شبرا العام', number: '0222352325'},
@@ -33,8 +33,8 @@ export const HOSPITALS: DataTableItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class DataTableDataSource extends DataSource<DataTableItem> {
-  data: DataTableItem[] = HOSPITALS;
+export class DataTableDataSource extends DataSource<HospitalItem> {
+  data: HospitalItem[] = HOSPITALS;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -47,7 +47,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<DataTableItem[]> {
+  connect(): Observable<HospitalItem[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
@@ -72,7 +72,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: DataTableItem[]) {
+  private getPagedData(data: HospitalItem[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -81,7 +81,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: DataTableItem[]) {
+  private getSortedData(data: HospitalItem[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
